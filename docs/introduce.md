@@ -66,7 +66,7 @@
 |3|Keyes Bluetooth-4.0 蓝牙4.0 V2|1|![](media/3bff08324933e26d9f62ee5b6c63bb69.png)|
 |4|keyes brick HC-SR04超声波传感器 防反插白色端子|1|![](media/1e767f9f04f58447f524b32f44fda4ad.png)|
 |5|keyes brick 红外接收传感器(焊盘孔) 防反插白色端子|1|![](media/cf17457bf97dff9c16d5366f1f81ce66.png)|
-|6|keyestudio 8x16 LED灯板 黑色 环保（更新后的资料，KS0357老版本出完后共用）|1|![](media/af9ff5e890fa3029738f84162cc3f713.png)|
+|6|keyes 8x16 LED灯板 黑色 环保（更新后的资料，KS0357老版本出完后共用）|1|![](media/af9ff5e890fa3029738f84162cc3f713.png)|
 |7|keyes brick 光敏电阻传感器(焊盘孔) 防反插白色端子|2|![](media/f9c66a79affc1091bbcf4bffdc165d45.png)|
 |8|JMP-1 17键86*40*6.5MM黑色 环保|1|![](media/86bd20ecff4bfdea20fee2ae51b1a49b.png)|
 |9|铝合金拼接板L*W*H=99*27*4MM 阳极氧化 蓝色|4|![](media/d39921f2069ed8b5075218bf47fed384.png)|
@@ -76,7 +76,7 @@
 |13|27*27*16MM 圆孔孔径M4 ABS材质 蓝色|2|![](media/09d47b24ffceed05865aa168eef3cac3.png)|
 |14|L型支架 3*25*31*33MM 氧化喷砂 黑色 铝|1|![](media/00239815c903ce2324ec3a25fa8324f1.png)|
 |15|SG90 9G 23*12.2*29mm 蓝色 辉盛 180度 环保|1|![](media/ebfc39b179ba70727ddf81ce6817deb5.png)|
-|16|KS0428 Keyestudio 迷你履带坦克机器人套件 V2.0 亚克力 T=4mm 黑色透明环保|1|![](media/ec14065b3df0fd4739877445c230133d.png)|
+|16|KS0428 keyes 迷你履带坦克机器人套件 V2.0 亚克力 T=4mm 黑色透明环保|1|![](media/ec14065b3df0fd4739877445c230133d.png)|
 |17|履带式坦克底盘驱动轮 塑料 深灰色 50*33mm 孔径M4|2|![](media/bfbcceabd8e665db8da72bb660adac6e.png)|
 |18|履带式坦克底盘承重轮 塑料 黑色 50*35mm 孔径M4|2|![](media/c4aa629287f5552e6e59c0c0b14ed7d6.png)|
 |19|4.5cm*78cm 100节 黑色 塑料|0.78|![](media/29a7560183332addad2efa32d573126c.png)|
