@@ -139,20 +139,28 @@ Arduino的PWM引脚在3，5，6，9，10，11,上一小节的接线刚刚好在9
   呼吸灯
   http://www.keyes-robot.com
 */
-int ledPin = 9; // 定义LED为数字口9
+
+int ledPin = 9;    // 定义LED为数字口9
 int value;
-void setup () {
-  pinMode (ledPin, OUTPUT); // 初始化LED为输出模式
+
+void setup() 
+{
+    pinMode(ledPin, OUTPUT);    // 初始化LED为输出模式
 }
-void loop () {
-  for (value = 0; value < 255; value = value + 1) {
-    analogWrite (ledPin, value); //led变亮
-    delay (5); // 延迟5ms
-  }
-  for (value = 255; value > 0; value = value - 1) {
-    analogWrite (ledPin, value); // led变暗
-    delay (5); // 延迟5ms
-  }
+
+void loop() 
+{
+    for (value = 0; value < 255; value = value + 1) 
+    {
+        analogWrite(ledPin, value);    // led变亮
+        delay(5);                      // 延迟5ms
+    }
+
+    for (value = 255; value > 0; value = value - 1) 
+    {
+        analogWrite(ledPin, value);    // led变暗
+        delay(5);                      // 延迟5ms
+    }
 }
 ```
 
@@ -224,21 +232,28 @@ PWM比较多的用于调节LED灯的亮度。或者是电机的转动速度，�
   呼吸灯
   http://www.keyes-robot.com
 */
-int ledPin = 9; // 定义LED为数字口9
-void setup () {
-  pinMode (ledPin, OUTPUT); // 初始化LED为输出模式
-}
-void loop () {
-  for (int value = 0; value < 255; value = value + 1) {
-    analogWrite (ledPin, value); //led变亮
-    delay (30); // 延迟30ms
-  }
-  for (int value = 255; value > 0; value = value - 1) {
-    analogWrite (ledPin, value); // led变暗
-    delay (30); // 延迟30ms
-  }
+
+int ledPin = 9;    // 定义LED为数字口9
+
+void setup() 
+{
+    pinMode(ledPin, OUTPUT);    // 初始化LED为输出模式
 }
 
+void loop() 
+{
+    for (int value = 0; value < 255; value = value + 1) 
+    {
+        analogWrite(ledPin, value);    // led变亮
+        delay(30);                     // 延迟30ms
+    }
+
+    for (int value = 255; value > 0; value = value - 1) 
+    {
+        analogWrite(ledPin, value);    // led变暗
+        delay(30);                     // 延迟30ms
+    }
+}
 ```
 
 上传代码到开发板，看LED渐变的效果是不是慢了一些。
@@ -284,12 +299,15 @@ void loop () {
   光敏电阻
   http://www.keyes-robot.com
 */
+
 int light;  //定义变量light
-void setup() {
+void setup() 
+{
   Serial.begin(9600);//设置波特率为9600
 }
 
-void loop() {
+void loop() 
+{
   light = analogRead(A1); //读取到的模拟值赋给light变量
   Serial.print("light:");   //打印光线模拟值
   Serial.println(light);
@@ -328,25 +346,30 @@ analogRead-读取引脚模拟状态，范围为0~1023。
   光敏电阻
   http://www.keyes-robot.com
 */
+
 int ledPin = 9; //定义LED管脚为数字口9
 int left_light = 0; //定义左边传感器的变量
 int right_light = 0; //定义右边传感器的变量
-void setup() {
+void setup() 
+{
   Serial.begin(9600);//设置波特率为9600
   pinMode(ledPin, OUTPUT); //设置LED管脚为输出模式
 }
 
-void loop() {
+void loop() 
+{
   left_light = analogRead(A1); //左边光敏传感器接A1
   right_light = analogRead(A2); //右边光敏传感器接A2
   Serial.print("left_light:");   //打印左边光线模拟值
   Serial.print(left_light);
   Serial.print("  right_light:");   //打印右边光线模拟值
   Serial.println(right_light);
-  if (left_light < 300 || right_light < 300) { //其中一个模拟值低于300
+  if (left_light < 300 || right_light < 300)
+  { //其中一个模拟值低于300
     digitalWrite(ledPin, HIGH); //点亮LED
   }
-  else {
+  else 
+  {
     digitalWrite(ledPin, LOW); //LED熄灭
   }
 }
@@ -420,26 +443,32 @@ void loop() {
   伺服舵机
   http://www.keyes-robot.com
 */
+
 #define servoPin 10  //舵机引脚接D10
 int pos; //舵机的角度变量
 int pulsewidth; //舵机的脉宽变量
-void setup() {
+void setup()
+{
   pinMode(servoPin, OUTPUT);  //舵机引脚设置为输出
   procedure(0); //设置舵机的角度为0度
 }
-void loop() {
-  for (pos = 0; pos <= 180; pos += 1) { // 从0到180度
+void loop()
+{
+  for (pos = 0; pos <= 180; pos += 1)
+  { // 从0到180度
     // in steps of 1 degree
     procedure(pos);              // 转动到pos角度位置
     delay(15);                   //控制舵机转动的速度
   }
-  for (pos = 180; pos >= 0; pos -= 1) { // 从180到0度
+  for (pos = 180; pos >= 0; pos -= 1)
+  { // 从180到0度
     procedure(pos);              // 转动到pos角度位置
     delay(15);
   }
 }
 //控制舵机的函数
-void procedure(int myangle) {
+void procedure(int myangle) 
+{
   pulsewidth = myangle * 11 + 500;  //计算出脉宽值
   digitalWrite(servoPin, HIGH);
   delayMicroseconds(pulsewidth);   //高电平持续的时间，就是脉宽
@@ -465,20 +494,25 @@ void procedure(int myangle) {
   伺服舵机
   http://www.keyes-robot.com
 */
+
 #include <Servo.h>
 Servo myservo;  // 创建舵机类实例
 
 int pos = 0;    //角度变量
-void setup() {
+void setup()
+{
   myservo.attach(10);  //舵机接数字口10
 }
-void loop() {
-  for (pos = 0; pos <= 180; pos += 1) { // 从0到180
+void loop()
+{
+  for (pos = 0; pos <= 180; pos += 1)
+  { // 从0到180
     // in steps of 1 degree
     myservo.write(pos);              // 转动到pos角度
     delay(15);                       // 等待15ms  以控制舵机转动速度
   }
-  for (pos = 180; pos >= 0; pos -= 1) { // 从180到0
+  for (pos = 180; pos >= 0; pos -= 1)
+  { // 从180到0
     myservo.write(pos);              // 转动到pos角度
     delay(15);                       // 等待15ms  以控制舵机转动速度
   }
@@ -579,14 +613,16 @@ Trigger Input Pulse width: 10uS
 int trigPin = 12;    // Trig引脚接D12
 int echoPin = 13;    // Echo引脚接D13
 long duration, cm, inches;
-void setup() {
+void setup()
+{
   //启动串口监视器
   Serial.begin (9600);
   //定义引脚输入输出模式
   pinMode(trigPin, OUTPUT);//trigPin设置为输出
   pinMode(echoPin, INPUT);//echoPin设置为输入
 }
-void loop() {
+void loop() 
+{
   // 拉低2us
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
@@ -651,7 +687,8 @@ We need to divide the traveltime by 2 because we have to take into account that 
 int trigPin = 12;    // Trig引脚接D12
 int echoPin = 13;    // Echo引脚接D13
 long duration, cm, inches;
-void setup() {
+void setup()
+{
   //启动串口监视器
   Serial.begin (9600);
   //定义引脚输入输出模式
@@ -659,7 +696,8 @@ void setup() {
   pinMode(echoPin, INPUT);//echoPin设置为输入
   pinMode(9, OUTPUT);
 }
-void loop() {
+void loop()
+{
   // 拉低2us
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
@@ -676,10 +714,12 @@ void loop() {
   Serial.print(cm);
   Serial.print("cm");
   Serial.println();
-  if (cm >= 2 && cm <= 10) {
+  if (cm >= 2 && cm <= 10)
+  {
     digitalWrite(9, HIGH);
   }
-  else {
+  else 
+  {
     digitalWrite(9, LOW);
   }
   delay(50);
@@ -756,7 +796,8 @@ void setup()
   Serial.begin(9600);
   irrecv.enableIRIn(); // 启动接收器
 }
-void loop() {
+void loop() 
+{
   if (irrecv.decode(&results))//解码成功，收到一组红外讯号
   {
     Serial.println(results.value, HEX);//以16进制换行输出接收代码
@@ -810,8 +851,10 @@ void setup()
   irrecv.enableIRIn(); // 初始化红外接收器
   pinMode(LED_PIN, OUTPUT); //设置发光LED引脚数字9为输出模式
 }
-void loop() {
-  if (irrecv.decode(&results)) {
+void loop()
+{
+  if (irrecv.decode(&results))
+  {
     Serial.println(results.value, HEX);
     if (results.value == 0xFF02FD & a == 0) //由上面的键值码，我们用的遥控器上的OK键，如果按下OK键
     {
@@ -900,10 +943,12 @@ Working temperature: –5 to +65 Centigrade
   http://www.keyes-robot.com
 */
 char ble_val; //字符变量，用于存放蓝牙接收到的值
-void setup() {
+void setup() 
+{
   Serial.begin(9600);
 }
-void loop() {
+void loop()
+{
   if (Serial.available() > 0) //判断串口缓存区是否有数据
   {
     ble_val = Serial.read();  //读取串口缓存区的数据
@@ -1084,14 +1129,16 @@ int MA = 2; //定义电机M1,M2方向控制引脚为D2
 int PWMA = 6; //定义电机M1,M2速度控制引脚为D6
 int MB = 4; //定义电机M3,M4方向控制引脚为D4
 int PWMB = 5; //定义电机M3,M4速度控制引脚为D5
-void setup() {
+void setup()
+{
   pinMode(MA, OUTPUT); //配置电机引脚为输出模式
   pinMode(PWMA, OUTPUT);
   pinMode(MB, OUTPUT);
   pinMode(PWMB, OUTPUT);
 
 }
-void loop() {
+void loop() 
+{
   //前进1秒
   digitalWrite(MA, LOW); //电机A正转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -1155,14 +1202,16 @@ int MA = 2; //定义电机M1,M2方向控制引脚为D2
 int PWMA = 6; //定义电机M1,M2速度控制引脚为D6
 int MB = 4; //定义电机M3,M4方向控制引脚为D4
 int PWMB = 5; //定义电机M3,M4速度控制引脚为D5
-void setup() {
+void setup()
+{
   pinMode(MA, OUTPUT); //配置电机引脚为输出模式
   pinMode(PWMA, OUTPUT);
   pinMode(MB, OUTPUT);
   pinMode(PWMB, OUTPUT);
 
 }
-void loop() {
+void loop()
+{
   //前进1秒
   digitalWrite(MA, LOW); //电机A正转
   analogWrite(PWMA, 100); //电机A速度为100
@@ -1332,14 +1381,16 @@ void loop() {
 unsigned char smile[] = {0x00, 0x00, 0x1c, 0x02, 0x02, 0x02, 0x5c, 0x40, 0x40, 0x5c, 0x02, 0x02, 0x02, 0x1c, 0x00, 0x00};
 #define SCL_Pin  A5  //设置时钟引脚为 A5
 #define SDA_Pin  A4  //设置数据引脚为 A4
-void setup() {
+void setup()
+{
   //设置引脚为输出
   pinMode(SCL_Pin, OUTPUT);
   pinMode(SDA_Pin, OUTPUT);
   //清屏
   //matrix_display(clear);
 }
-void loop() {
+void loop()
+{
   matrix_display(smile);  //显示微笑表情图案
 }
 //这个函数用于点阵屏显示
@@ -1469,14 +1520,16 @@ unsigned char STOP01[] = {0x2E, 0x2A, 0x3A, 0x00, 0x02, 0x3E, 0x02, 0x00, 0x3E, 
 unsigned char clear[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 #define SCL_Pin  A5  //设置时钟引脚为 A5
 #define SDA_Pin  A4  //设置数据引脚为 A4
-void setup() {
+void setup()
+{
   //设置引脚为输出
   pinMode(SCL_Pin, OUTPUT);
   pinMode(SDA_Pin, OUTPUT);
   //清屏
   matrix_display(clear);
 }
-void loop() {
+void loop()
+{
   matrix_display(start01);  //显示开始图案
   delay(2000);
   matrix_display(front);    //前进图案
@@ -1606,7 +1659,8 @@ unsigned char clear[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0
 int left_light = 0; //定义左边传感器的变量
 int right_light = 0; //定义右边传感器的变量
 
-void setup() {
+void setup()
+{
   Serial.begin(9600);//设置波特率为9600
   pinMode(MA, OUTPUT); //配置电机引脚为输出模式
   pinMode(PWMA, OUTPUT);
@@ -1617,9 +1671,10 @@ void setup() {
   pinMode(SDA_Pin, OUTPUT);
   //清屏
   matrix_display(clear);
-
 }
-void loop() {
+
+void loop()
+{
   left_light = analogRead(A1); //左边光敏传感器接A1
   right_light = analogRead(A2); //右边光敏传感器接A2
   Serial.print("left_light:");   //打印左边光线模拟值
@@ -1629,18 +1684,22 @@ void loop() {
   if (left_light > 650 && right_light > 650) { //左右超过650
     advance();   //前进
   }
-  else if (left_light > 650 && right_light <= 650) {
+  else if (left_light > 650 && right_light <= 650) 
+  {
     turnL(); //左转
   }
-  else if (left_light <= 650 && right_light > 650) {
+  else if (left_light <= 650 && right_light > 650)
+  {
     turnR(); //右转
   }
-  else if(left_light <= 650 && right_light <= 650) {
+  else if(left_light <= 650 && right_light <= 650)
+  {
     stopp();//停止
   }
 }
 
-void advance() { //小车前进
+void advance()
+{ //小车前进
   matrix_display(front);  //显示向前的图案
   digitalWrite(MA, LOW); //电机A正转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -1648,7 +1707,8 @@ void advance() { //小车前进
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void back() { //小车后退
+void back() 
+{ //小车后退
   matrix_display(back01);  //显示后退的图案
   digitalWrite(MA, HIGH); //电机A反转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -1656,7 +1716,8 @@ void back() { //小车后退
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void turnL() { //小车左转
+void turnL()
+{ //小车左转
   matrix_display(left);  //显示左转的图案
   digitalWrite(MA, HIGH); //电机A反转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -1664,7 +1725,8 @@ void turnL() { //小车左转
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void turnR() { //小车右转
+void turnR() 
+{ //小车右转
   matrix_display(right);  //显示右转的图案
   digitalWrite(MA, LOW); //电机A正转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -1672,7 +1734,8 @@ void turnR() { //小车右转
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void stopp() { //小车停止
+void stopp() 
+{ //小车停止
   matrix_display(STOP01);  //显示停止的图案
   analogWrite(PWMA, 0); //电机A速度为0
   analogWrite(PWMB, 0); //电机B速度为0
@@ -1801,7 +1864,8 @@ unsigned char clear[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0
 #define SCL_Pin  A5  //设置时钟引脚为 A5
 #define SDA_Pin  A4  //设置数据引脚为 A4
 
-int get_distance() { //超声波测距函数
+int get_distance()
+{ //超声波测距函数
   int distance;
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
@@ -1813,7 +1877,8 @@ int get_distance() { //超声波测距函数
   return distance;
 }
 
-void setup() {
+void setup() 
+{
   Serial.begin(9600);  //设置波特率为9600
   myservo.attach(10);  // attaches the servo on pin 10 to the servo object
   pinMode(trigPin, OUTPUT); //定义TRIG为输出模式
@@ -1831,24 +1896,30 @@ void setup() {
   delay(500);
 }
 
-void loop() {
+void loop()
+{
   distance = get_distance(); //调用测距函数
 
-  if (distance < 8 ) {//如果距离小于8
+  if (distance < 8 )
+  {//如果距离小于8
     back();//后退
   }
-  else if (distance >= 8 && distance < 13) { //如果距离大于等于8，小于13
+  else if (distance >= 8 && distance < 13)
+  { //如果距离大于等于8，小于13
     stopp();//停止
   }
-  else if (distance >= 13 && distance <= 35 ) { //如果距离大于等于13，小于35
+  else if (distance >= 13 && distance <= 35 )
+  { //如果距离大于等于13，小于35
     advance();//跟随
   }
-  else {//如果以上都不是
+  else 
+  {//如果以上都不是
     stopp();//停止
   }
 }
 
-void advance() { //小车前进
+void advance()
+{ //小车前进
   matrix_display(front);  //显示向前的图案
   digitalWrite(MA, LOW); //电机A正转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -1856,7 +1927,8 @@ void advance() { //小车前进
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void back() { //小车后退
+void back() 
+{ //小车后退
   matrix_display(back01);  //显示后退的图案
   digitalWrite(MA, HIGH); //电机A反转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -1864,7 +1936,8 @@ void back() { //小车后退
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void turnL() { //小车左转
+void turnL() 
+{ //小车左转
   matrix_display(left);  //显示左转的图案
   digitalWrite(MA, HIGH); //电机A反转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -1872,7 +1945,8 @@ void turnL() { //小车左转
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void turnR() { //小车右转
+void turnR() 
+{ //小车右转
   matrix_display(right);  //显示右转的图案
   digitalWrite(MA, LOW); //电机A正转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -1880,7 +1954,8 @@ void turnR() { //小车右转
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void stopp() { //小车停止
+void stopp()
+{ //小车停止
   matrix_display(STOP01);  //显示停止的图案
   analogWrite(PWMA, 0); //电机A速度为0
   analogWrite(PWMB, 0); //电机B速度为0
@@ -2027,7 +2102,8 @@ void loop()
 {
   distance = get_distance(); //调用测距函数
 
-  if (distance > 0 && distance < 20) { //如果距离小于20且大于0
+  if (distance > 0 && distance < 20)
+  { //如果距离小于20且大于0
     stopp();//停止
     delay(100);
     myservo.write(180); //舵机转到180度
@@ -2038,14 +2114,16 @@ void loop()
     delay(500);
     distance_r = get_distance(); //获取右边的距离
     delay(100);
-    if (distance_l > distance_r) { //比较距离，如果左边大于右边
+    if (distance_l > distance_r)
+    { //比较距离，如果左边大于右边
       turnL();  //向左转
       delay(500);
       myservo.write(90);//舵机回到90度
       matrix_display(front);   //点阵显示前进图案
 
     }
-    else { //否则如果右边大于左边
+    else
+    { //否则如果右边大于左边
       turnR();//向右转
       delay(500);
       myservo.write(90);//舵机回到90度
@@ -2053,13 +2131,15 @@ void loop()
     }
   }
 
-  else { //前方距离小于等于10cm时
+  else
+  { //前方距离小于等于10cm时
     advance();//前进
   }
 
 }
 
-int get_distance() {
+int get_distance() 
+{
   int distance = 0;
   digitalWrite(trigPin, LOW);     // 通过Trig/Pin 发送脉冲，触发 HC-SR04 测距，使发出发出超声波信号接口低电平2μs
   delayMicroseconds(2);
@@ -2071,7 +2151,8 @@ int get_distance() {
   return distance;
 }
 
-void advance() { //小车前进
+void advance()
+{ //小车前进
   matrix_display(front);  //显示向前的图案
   digitalWrite(MA, LOW); //电机A正转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -2079,7 +2160,8 @@ void advance() { //小车前进
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void back() { //小车后退
+void back() 
+{ //小车后退
   matrix_display(back01);  //显示后退的图案
   digitalWrite(MA, HIGH); //电机A反转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -2087,7 +2169,8 @@ void back() { //小车后退
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void turnL() { //小车左转
+void turnL() 
+{ //小车左转
   matrix_display(left);  //显示左转的图案
   digitalWrite(MA, HIGH); //电机A反转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -2095,7 +2178,8 @@ void turnL() { //小车左转
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void turnR() { //小车右转
+void turnR()
+{ //小车右转
   matrix_display(right);  //显示右转的图案
   digitalWrite(MA, LOW); //电机A正转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -2103,7 +2187,8 @@ void turnR() { //小车右转
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void stopp() { //小车停止
+void stopp()
+{ //小车停止
   matrix_display(STOP01);  //显示停止的图案
   analogWrite(PWMA, 0); //电机A速度为0
   analogWrite(PWMB, 0); //电机B速度为0
@@ -2227,7 +2312,8 @@ int PWMA = 6; //定义电机A速度控制引脚为D6
 int MB = 4; //定义电机B方向控制引脚为D4
 int PWMB = 5; //定义电机B速度控制引脚为D5
 
-void setup() {
+void setup()
+{
   Serial.begin(9600);  //设置波特率为9600
   pinMode(MA, OUTPUT); //配置电机引脚为输出模式
   pinMode(PWMA, OUTPUT);
@@ -2240,11 +2326,14 @@ void setup() {
   matrix_display(start01);
 }
 
-void loop() {
-  if (irrecv.decode(&results)) { //是否接收到红外遥控信号
+void loop() 
+{
+  if (irrecv.decode(&results))
+  { //是否接收到红外遥控信号
     IR_val = results.value;
     Serial.println(IR_val, HEX); //串口打印数据
-    switch (IR_val) {
+    switch (IR_val)
+    {
       case 0xFF629D:  advance();  break;
       case 0xFFA857:  back();     break;
       case 0xFF22DD:  turnL();    break;
@@ -2255,7 +2344,8 @@ void loop() {
   }
 }
 
-void advance() { //小车前进
+void advance() 
+{ //小车前进
   matrix_display(front);  //显示向前的图案
   digitalWrite(MA, LOW); //电机A正转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -2263,7 +2353,8 @@ void advance() { //小车前进
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void back() { //小车后退
+void back()
+{ //小车后退
   matrix_display(back01);  //显示后退的图案
   digitalWrite(MA, HIGH); //电机A反转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -2271,7 +2362,8 @@ void back() { //小车后退
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void turnL() { //小车左转
+void turnL()
+{ //小车左转
   matrix_display(left);  //显示左转的图案
   digitalWrite(MA, HIGH); //电机A反转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -2279,7 +2371,8 @@ void turnL() { //小车左转
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void turnR() { //小车右转
+void turnR()
+{ //小车右转
   matrix_display(right);  //显示右转的图案
   digitalWrite(MA, LOW); //电机A正转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -2287,7 +2380,8 @@ void turnR() { //小车右转
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void stopp() { //小车停止
+void stopp() 
+{ //小车停止
   matrix_display(STOP01);  //显示停止的图案
   analogWrite(PWMA, 0); //电机A速度为0
   analogWrite(PWMB, 0); //电机B速度为0
@@ -2420,7 +2514,8 @@ int MB = 4; //定义电机A方向控制引脚为D4
 int PWMB = 5; //定义电机A速度控制引脚为D5
 char blue_val;
 
-void setup() {
+void setup()
+{
   Serial.begin(9600);  //设置波特率为9600
   pinMode(MA, OUTPUT); //配置电机引脚为输出模式
   pinMode(PWMA, OUTPUT);
@@ -2433,7 +2528,8 @@ void setup() {
   matrix_display(clear);
   matrix_display(start01);
 }
-void loop() {
+void loop()
+{
   if (Serial.available() > 0) { //接收到蓝牙信号
     blue_val = Serial.read(); //接收到的信号赋给blue_val
     Serial.println(blue_val);  //串口监视器显示蓝牙信号
@@ -2447,7 +2543,8 @@ void loop() {
   }
 }
 
-void advance() { //小车前进
+void advance()
+{ //小车前进
   matrix_display(front);  //显示向前的图案
   digitalWrite(MA, LOW); //电机A正转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -2455,7 +2552,8 @@ void advance() { //小车前进
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void back() { //小车后退
+void back() 
+{ //小车后退
   matrix_display(back01);  //显示后退的图案
   digitalWrite(MA, HIGH); //电机A反转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -2463,7 +2561,8 @@ void back() { //小车后退
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void turnL() { //小车左转
+void turnL() 
+{ //小车左转
   matrix_display(left);  //显示左转的图案
   digitalWrite(MA, HIGH); //电机A反转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -2471,7 +2570,8 @@ void turnL() { //小车左转
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void turnR() { //小车右转
+void turnR()
+{ //小车右转
   matrix_display(right);  //显示右转的图案
   digitalWrite(MA, LOW); //电机A正转
   analogWrite(PWMA, 200); //电机A速度为200
@@ -2479,7 +2579,8 @@ void turnR() { //小车右转
   analogWrite(PWMB, 200); //电机B速度为200
 }
 
-void stopp() { //小车停止
+void stopp() 
+{ //小车停止
   matrix_display(STOP01);  //显示停止的图案
   analogWrite(PWMA, 0); //电机A速度为0
   analogWrite(PWMB, 0); //电机B速度为0
@@ -2620,7 +2721,8 @@ int distance, distance_l, distance_r;
 int left_light = 0; //定义左边传感器的变量
 int right_light = 0; //定义右边传感器的变量
 
-void setup() {
+void setup()
+{
   Serial.begin(9600);  //设置波特率为9600
   myservo.attach(10);  // attaches the servo on pin 10 to the servo object
   myservo.write(90);  //舵机角度为90
@@ -2639,11 +2741,13 @@ void setup() {
   matrix_display(clear);
   matrix_display(start01);
 }
-void loop() {
+void loop() 
+{
   if (Serial.available() > 0) { //接收到蓝牙信号
     blue_val = Serial.read(); //接收到的信号赋给blue_val
     Serial.println(blue_val);  //串口监视器显示蓝牙信号
-    switch (blue_val) {
+    switch (blue_val)
+    {
       case  'F':  advance();   break;  //接收到‘F’前进
       case  'B':  back();      break;  //接收到‘B’后退
       case  'L':  turnL();     break;  //接收到‘L’左旋
@@ -2655,7 +2759,8 @@ void loop() {
     }
   }
 
-  if (irrecv.decode(&results)) { //是否接收到红外遥控信号
+  if (irrecv.decode(&results))
+  { //是否接收到红外遥控信号
     IR_val = results.value;
     Serial.println(IR_val, HEX); //串口打印数据
     switch (IR_val) {
@@ -2670,7 +2775,8 @@ void loop() {
 
 }
 
-void advance() { //小车前进
+void advance()
+{ //小车前进
   matrix_display(front);  //显示向前的图案
   digitalWrite(MA, LOW); //电机A正转
   analogWrite(PWMA, speeds); //电机A速度为speeds
@@ -2678,7 +2784,8 @@ void advance() { //小车前进
   analogWrite(PWMB, speeds); //电机B速度为speeds
 }
 
-void back() { //小车后退
+void back()
+{ //小车后退
   matrix_display(back01);  //显示后退的图案
   digitalWrite(MA, HIGH); //电机A反转
   analogWrite(PWMA, speeds); //电机A速度为speeds
@@ -2686,7 +2793,8 @@ void back() { //小车后退
   analogWrite(PWMB, speeds); //电机B速度为speeds
 }
 
-void turnL() { //小车左转
+void turnL() 
+{ //小车左转
   matrix_display(left);  //显示左转的图案
   digitalWrite(MA, HIGH); //电机A反转
   analogWrite(PWMA, speeds); //电机A速度为speeds
@@ -2694,7 +2802,8 @@ void turnL() { //小车左转
   analogWrite(PWMB, speeds); //电机B速度为speeds
 }
 
-void turnR() { //小车右转
+void turnR() 
+{ //小车右转
   matrix_display(right);  //显示右转的图案
   digitalWrite(MA, LOW); //电机A正转
   analogWrite(PWMA, speeds); //电机A速度为speeds
@@ -2702,13 +2811,15 @@ void turnR() { //小车右转
   analogWrite(PWMB, speeds); //电机B速度为speeds
 }
 
-void stopp() { //小车停止
+void stopp()
+{ //小车停止
   matrix_display(STOP01);  //显示停止的图案
   analogWrite(PWMA, 0); //电机A速度为0
   analogWrite(PWMB, 0); //电机B速度为0
 }
 
-int get_distance() {
+int get_distance()
+{
   int distance = 0;
   digitalWrite(trigPin, LOW);     // 通过Trig/Pin 发送脉冲，触发 HC-SR04 测距，使发出发出超声波信号接口低电平2μs
   delayMicroseconds(2);
@@ -2721,36 +2832,46 @@ int get_distance() {
   return distance;
 }
 
-void follow() {
+void follow()
+{
   int follow_flag = 1;
-  while (follow_flag) {
+  while (follow_flag) 
+  {
     distance = get_distance(); //调用测距函数
-    if (distance < 8 ) {//如果距离小于8
+    if (distance < 8 ) 
+    {//如果距离小于8
       back();//后退
     }
-    else if (distance >= 8 && distance < 13) { //如果距离大于等于8，小于13
+    else if (distance >= 8 && distance < 13)
+    { //如果距离大于等于8，小于13
       stopp();//停止
     }
-    else if (distance >= 13 && distance <= 35 ) { //如果距离大于等于13，小于35
+    else if (distance >= 13 && distance <= 35 ) 
+    { //如果距离大于等于13，小于35
       advance();//跟随
     }
-    else {//如果以上都不是
+    else
+    {//如果以上都不是
       stopp();//停止
     }
     blue_val = Serial.read();
-    if (blue_val == 'S') { //接收到‘S’退出循环，小车停止
+    if (blue_val == 'S')
+    { //接收到‘S’退出循环，小车停止
       follow_flag = 0;
       stopp();
     }
   }
 }
 
-void avoid() {
+void avoid() 
+{
   int avoid_flag = 1;
-  while (avoid_flag) {
+  while (avoid_flag) 
+  {
     distance = get_distance(); //调用测距函数
 
-    if (distance > 0 && distance < 20) { //如果距离小于20且大于0
+    if (distance > 0 && distance < 20)
+    { //如果距离小于20且大于0
       stopp();//停止
       delay(100);
       myservo.write(180); //舵机转到180度
@@ -2761,7 +2882,8 @@ void avoid() {
       delay(500);
       distance_r = get_distance(); //获取右边的距离
       delay(100);
-      if (distance_l > distance_r) { //比较距离，如果左边大于右边
+      if (distance_l > distance_r)
+      { //比较距离，如果左边大于右边
         turnL();  //向左转
         delay(500);
         myservo.write(90);//舵机回到90度
@@ -2769,7 +2891,8 @@ void avoid() {
         matrix_display(front);   //点阵显示前进图案
 
       }
-      else { //否则如果右边大于左边
+      else
+      { //否则如果右边大于左边
         turnR();//向右转
         delay(500);
         myservo.write(90);//舵机回到90度
@@ -2778,37 +2901,46 @@ void avoid() {
       }
 
     }
-    else { //前方距离小于等于10cm时
+    else
+    { //前方距离小于等于10cm时
       advance();//前进
 
     }
     blue_val = Serial.read();
-    if (blue_val == 'S') { //接收到‘S’退出循环，小车停止
+    if (blue_val == 'S') 
+    { //接收到‘S’退出循环，小车停止
       avoid_flag = 0;
       stopp();
     }
   }
 }
 
-void light_follow() {
+void light_follow() 
+{
   int light_flag = 1;
-  while (light_flag) {
+  while (light_flag) 
+  {
     left_light = analogRead(A1); //左边光敏传感器接A1
     right_light = analogRead(A2); //右边光敏传感器接A2
-    if (left_light > 650 && right_light > 650) { //左右超过650
+    if (left_light > 650 && right_light > 650) 
+    { //左右超过650
       advance();   //前进
     }
-    else if (left_light > 650 && right_light <= 650) {
+    else if (left_light > 650 && right_light <= 650) 
+    {
       turnL(); //左转
     }
-    else if (left_light <= 650 && right_light > 650) {
+    else if (left_light <= 650 && right_light > 650)
+    {
       turnR(); //右转
     }
-    else if (left_light <= 650 && right_light <= 650) {
+    else if (left_light <= 650 && right_light <= 650)
+    {
       stopp();//停止
     }
     blue_val = Serial.read();
-    if (blue_val == 'S') { //接收到‘S’退出循环，小车停止
+    if (blue_val == 'S') 
+    { //接收到‘S’退出循环，小车停止
       light_flag = 0;
       stopp();
     }
