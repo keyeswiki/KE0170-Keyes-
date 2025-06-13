@@ -52,8 +52,8 @@ MHz石英晶体，一个USB连接，一个电源插孔，2个ICSP接头和一个
 | LED按键                     | D13                                   |
 +-----------------------------+---------------------------------------+
 
-L298P 电机驱动扩展板
---------------------
+L298P电机驱动扩展板
+-------------------
 
 |Img|
 
@@ -89,7 +89,7 @@ DC输入电压：DC7V~9V
 
 重量：25.5克
 
-3、GPIO示意图
+3、L298P电机驱动扩展板示意图
 
 |image4|
 
@@ -97,8 +97,13 @@ DC输入电压：DC7V~9V
 
 8V LED指示灯：当外接电源低于8V时，LED熄灭；高于8V时，LED亮起。
 
+4、L298P电机驱动扩展板连接电机图
+
+|image5|
+
 .. |image1| image:: media/c09384471e241cabe2f0b887e8b645a2.jpg
 .. |image2| image:: media/259b91cad3470095d1eb58101f5db165.png
 .. |image3| image:: media/06ee496817391727502329769363c6e6.png
 .. |Img| image:: ./media/KE0163.png
 .. |image4| image:: ./media/KE0163-1.png
+.. |image5| image:: ./media/KE0163-2.png
