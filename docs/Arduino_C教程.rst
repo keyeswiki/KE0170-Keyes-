@@ -18,24 +18,21 @@ Arduino IDE开发环境设置
 下载安装Arduino IDE
 ~~~~~~~~~~~~~~~~~~~
 
-我们先到arduino官方的网站\ https://www.arduino.cc/\ 下载最新版本的arduino开发软件,进入网站之后点击界面上的SOFTWARE,，选择DOWNLOADS进入下载页面，如下图：
+我们先到arduino官方的网站 https://www.arduino.cc/en/software
+下载最新版本的arduino开发软件,进入网站之后点击界面上的SOFTWARE,，选择DOWNLOADS进入下载页面，如下图：
 
 |image1|
 
 Arduino 软件有很多版本，有wodows,mac
 linux系统的（如下图），而且还有过去老的版本，你只需要下载一个适合系统的版本。
 
-这里我们以WINDOWS系统的为例给大家介绍一下下载和安装的步骤。
+这里我们以WINDOWS系统的为例给大家介绍一下下载和安装的步骤。WINDOWS系统的也有两个版本，一个版本是安装版的，一个是下载版的不用安装，直接下载文件到电脑，解压缩就可以用了。
 
 |image2|
 
-WINDOWS系统的也有两个版本，一个版本是安装版的，一个是下载版的不用安装，直接下载文件到电脑，解压缩就可以用了。
-
-|image3|
-
 两个版本都可以正常使用，看你自己的喜好了。选择一个版本，然后将Arduino开发软件下载到我们的电脑。
 
-|image4|
+|image3|
 
 一般情况下，我们点击JUST DOWNLOAD就可以下载了。
 
@@ -45,16 +42,19 @@ WINDOWS系统的也有两个版本，一个版本是安装版的，一个是下�
 接下来，我们将介绍UNO
 R3开发板的驱动程序安装。在不同的计算机系统中，驱动程序的安装可能略有不同。在WIN
 10系统计算机上自带驱动文件，UNO R3
-开发板通过USB线连接到计算机上，驱动自动安装，可以自动看到串口端口。
+开发板通过USB线连接到计算机上，驱动自动安装，您可以右键单击“计算机”->“属性”->“设备管理器”，您将看到如下图所示的设备。
 
-但是，WIN 7系统计算机需要手动安装，因此，下面我们继续在WIN
+|image4|
+
+但是，WIN7/8系统计算机需要手动安装，因此，下面我们继续在WIN
 7系统中安装驱动程序。Arduino文件夹包含Arduino程序本身和驱动程序，这些驱动程序允许Arduino通过USB电缆连接到您的计算机。在我们启动Arduino软件之前，您将需要安装USB驱动程序。
 
 |image5|
 
 将USB线的一端插入Arduino UNO R3开发板，另一端插入计算机上的USB插座。
 
-第一次将UNO板连接到计算机时，右键单击“计算机”图标->“属性”->单击“设备管理器”，在“其他设备”下，您应看到“未知设备”旁边带有一个黄色警告三角形。
+第一次将UNO板连接到计算机时，右键单击“计算机”图标->“属性”->单击“设备管理器”，在“USB
+Serial”下，您应看到“未知设备”旁边带有一个黄色警告三角形。
 这是您的Arduino。
 
 |image6|
@@ -68,44 +68,44 @@ R3开发板的驱动程序安装。在不同的计算机系统中，驱动程序
 
 |image8|
 
-之后，选择浏览器选项并导航到Arduino安装的“ drivers”文件夹。
+之后，选择浏览器选项并导航到Arduino安装的“ drivers ”文件夹。
 
 |image9|
 
 单击“下一步”，您可能会收到安全警告，如果这样，则允许安装该软件。
-如下图所示。
 
-|image10|
+|Img|
 
 安装软件后，您将收到确认消息。 安装完成后，单击“关闭”。
 
-|image11|
+|image10|
 
 现在驱动程序已经安装好。然后您可以右键单击“计算机”->“属性”->“设备管理器”，您将看到如下图所示的设备。
 
-|image12|
+|image11|
 
 （4）Arduino IDE设置和工具栏介绍
 
-装好了开发板的驱动，我们下面要了解Arduino开发软件的使用了，首先我们点击电脑桌面上的\ |image13|\ 图标，打开Arduino
+装好了开发板的驱动，我们下面要了解Arduino开发软件的使用了，首先我们点击电脑桌面上的\ |image12|\ 图标，打开Arduino
 IDE。
+
+|image13|
+
+为了避免在将程序上载到板上时出现任何错误，必须选择正确的Arduino板名称，该名称与连接到计算机的电路板相匹配。转到
+**工具** → **开发板**\ ，然后选择你的板。
 
 |image14|
 
-为了避免在将程序上载到板上时出现任何错误，必须选择正确的Arduino板名称，该名称与连接到计算机的电路板相匹配。转到Tools→Board，然后选择你的板。
+然后再选择正确的COM口（安装驱动成功后可看到对应COM口）。
 
 |image15|
 
-然后再选择正确的COM口（安装驱动成功后可看到对应COM口）。
-
 |image16|
-
-|image17|
 
 我们的程序上传到板之前，我们必须演示Arduino
 IDE工具栏中出现的每个符号的功能。
 
-|image18|
+|image17|
 
 A - 用于检查是否存在任何编译错误。
 
@@ -123,21 +123,21 @@ F - 用于从板接收串行数据并将串行数据发送到板的串行监视
 
 上面我们学习了怎么下载软件和安装开发板的驱动，那下面我们就开始正式开始第一个程序，打开文件选择例子，选择第一个文件BASIC里面的BLINK程序
 
-|image19|
+|image18|
 
-|image20|
+|image19|
 
 按照前面方法设置板和COM口，IDE右下角显示对应板和COM口。
 
-|image21|
+|image20|
 
-点击\ |image22|\ 图标开始编译程序，检查错误，检查无误。
+点击\ |image21|\ 图标开始编译程序，检查错误，检查无误。
 
-|image23|
+|image22|
 
-点击点击\ |image24|\ 图标开始上传程序，上传成功。
+点击点击\ |image23|\ 图标开始上传程序，上传成功。
 
-|image25|
+|image24|
 
 程序上传成功，板载的LED灯亮一秒钟，灭一秒钟，恭喜你的第一个程序完成了！
 
@@ -147,7 +147,7 @@ F - 用于从板接收串行数据并将串行数据发送到板的串行监视
 我们提供的Arduino 库文件是放在资料的(路径：)
 ..\\Arduino_C_资料\\ke0170库文件的文件夹中，如下图
 
-|Img|
+|image25|
 
 Windows系统添加库文件的方法
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2992,30 +2992,30 @@ R3板上，上传好代码，按照接线图接线，将拨码开关拨至ON端�
 
 .. |image1| image:: media/4636aac9aca9b3aa9d86580caac51b81.png
 .. |image2| image:: media/c12c9b34d9c8c91931cf0b6716eeeac5.png
-.. |image3| image:: media/3de06358873b1f90b42e88ae36fb36a2.png
-.. |image4| image:: media/7c58250fe25d90cb4536978d98725bc5.png
+.. |image3| image:: media/7c58250fe25d90cb4536978d98725bc5.png
+.. |image4| image:: media/fc3b3afe1ae5c75ecfb2d2c321c73242.png
 .. |image5| image:: media/f8e5811e4e295f13e87d1d8aa441fbd9.jpeg
 .. |image6| image:: media/ec400b95c7271bb5fadce12be2f73fed.png
 .. |image7| image:: media/1598b59a32fbf5e844ef522a22b0bbad.png
 .. |image8| image:: media/931cabb3633c100c4d9760a26462321d.png
 .. |image9| image:: media/cca481d16263c158c26ea11e6c83cb5c.png
-.. |image10| image:: media/5240132703a319a60cbf7e343d460900.png
-.. |image11| image:: media/0f9c629828737c99d072f193aacc0ce2.png
-.. |image12| image:: media/fc3b3afe1ae5c75ecfb2d2c321c73242.png
-.. |image13| image:: media/15ee1732a5c94b90c848898712b66390.png
-.. |image14| image:: media/1cded8c58d09814b4d0f5840c6b43c02.png
-.. |image15| image:: media/23556d5d5178d3e9c78deff162329326.png
-.. |image16| image:: media/fc3b3afe1ae5c75ecfb2d2c321c73242.png
-.. |image17| image:: media/0d7149770640729ad5031f43674832ba.png
-.. |image18| image:: media/4a2d854778c633819c1af28a245e340d.png
-.. |image19| image:: media/a10884363fe0f51d8c7ffcd0cb2846db.png
-.. |image20| image:: media/a3c641837f358c1dd70d3ad1c916b102.png
-.. |image21| image:: media/9c5b1d88c241ea35bbd10e119dbf36f0.png
-.. |image22| image:: media/ddd21c81338ae1f6b7f84de2a3caecf0.png
-.. |image23| image:: media/177e1c9ae50aa822eec1c943dec3963b.png
-.. |image24| image:: media/9c9158a5d49baa740ea2f0048f655017.png
-.. |image25| image:: media/cdcdfaeba69bde24386b02cf6e75c29e.png
-.. |Img| image:: ./media/img-20250609160256.png
+.. |Img| image:: ./media/img-20250616151020.png
+.. |image10| image:: ./media/img-20250616151053.png
+.. |image11| image:: media/fc3b3afe1ae5c75ecfb2d2c321c73242.png
+.. |image12| image:: media/15ee1732a5c94b90c848898712b66390.png
+.. |image13| image:: media/1cded8c58d09814b4d0f5840c6b43c02.png
+.. |image14| image:: media/23556d5d5178d3e9c78deff162329326.png
+.. |image15| image:: media/fc3b3afe1ae5c75ecfb2d2c321c73242.png
+.. |image16| image:: media/0d7149770640729ad5031f43674832ba.png
+.. |image17| image:: media/4a2d854778c633819c1af28a245e340d.png
+.. |image18| image:: media/a10884363fe0f51d8c7ffcd0cb2846db.png
+.. |image19| image:: media/a3c641837f358c1dd70d3ad1c916b102.png
+.. |image20| image:: media/9c5b1d88c241ea35bbd10e119dbf36f0.png
+.. |image21| image:: media/ddd21c81338ae1f6b7f84de2a3caecf0.png
+.. |image22| image:: media/177e1c9ae50aa822eec1c943dec3963b.png
+.. |image23| image:: media/9c9158a5d49baa740ea2f0048f655017.png
+.. |image24| image:: ./media/img-20250616152845.png
+.. |image25| image:: ./media/img-20250609160256.png
 .. |image26| image:: ./media/img-20250609160421.png
 .. |image27| image:: ./media/img-20250609160642.png
 .. |image28| image:: ./media/img-20250609160836.png
