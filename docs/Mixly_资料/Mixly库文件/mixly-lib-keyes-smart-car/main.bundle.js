@@ -2787,7 +2787,7 @@ const desk_ir_r = function (_, generator) {
     //var dropdown_pin = generator.valueToCode(this, 'PIN', generator.ORDER_ATOMIC);
     var branch = generator.statementToCode(this, 'DO');
     var branch2 = generator.statementToCode(this, 'DO2');
-    generator.definitions_['1include_IRremote'] = '#include <IRremote.h>\n';
+    generator.definitions_['1include_IRremote'] = '#include <KE_IRremote.h>\n';
     //generator.definitions_['var_declare'+varName] = 'long '+varName+';\n';
     generator.definitions_['2var_ir_recv_A3'] = 'IRrecv irrecv(A3);\ndecode_results results;\n';
     generator.setups_['setup_ir_recv_A3'] = 'irrecv.enableIRIn();';
@@ -2932,7 +2932,7 @@ const ks4wd_STOP = function (_, generator) {
 
 
 
-///////////////////////Tank超声波//////////////////////
+///////////////////////超声波//////////////////////
 const ks4wd_sr04 = function (_, generator) {
     generator.setups_['setup_output_T'] = 'pinMode(12, OUTPUT);';
     generator.setups_['setup_output_E'] = 'pinMode(13, INPUT);';
@@ -3078,7 +3078,7 @@ const ks4wd_ir_r = function (_, generator) {
     //var dropdown_pin = generator.valueToCode(this, 'PIN', generator.ORDER_ATOMIC);
     var branch = generator.statementToCode(this, 'DO');
     var branch2 = generator.statementToCode(this, 'DO2');
-    generator.definitions_['1include_IRremote'] = '#include <IRremote.h>\n';
+    generator.definitions_['1include_IRremote'] = '#include <KE_IRremote.h>\n';
     //generator.definitions_['var_declare'+varName] = 'long '+varName+';\n';
     generator.definitions_['2var_ir_recv_A0'] = 'IRrecv irrecv(A1);\ndecode_results results;\n';
     generator.setups_['setup_ir_recv_A0'] = 'irrecv.enableIRIn();';
@@ -3139,12 +3139,12 @@ const tank_FRONT = function (_, generator) {
     var value_front = generator.valueToCode(this, 'speed_F', generator.ORDER_ATOMIC);
 
     //generator.setups_['setup_back_'] = 'pinMode(4, OUTPUT);\n  pinMode(2, OUTPUT);';//这样会在setup里会重复叠加
-    generator.setups_['setup_output_m1'] = 'pinMode(4, OUTPUT);';
-    generator.setups_['setup_output_p1'] = 'pinMode(5, OUTPUT);';
-    generator.setups_['setup_output_m2'] = 'pinMode(2, OUTPUT);';
-    generator.setups_['setup_output_p2'] = 'pinMode(6, OUTPUT);';
+    generator.setups_['setup_output_m1'] = 'pinMode(2, OUTPUT);';
+    generator.setups_['setup_output_p1'] = 'pinMode(6, OUTPUT);';
+    generator.setups_['setup_output_m2'] = 'pinMode(4, OUTPUT);';
+    generator.setups_['setup_output_p2'] = 'pinMode(5, OUTPUT);';
 
-    var code = 'digitalWrite(4,HIGH);\nanalogWrite(5,' + value_front + ');\ndigitalWrite(2,HIGH);\nanalogWrite(6,' + value_front + ');\n';
+    var code = 'digitalWrite(2,HIGH);\nanalogWrite(6,' + value_front + ');\ndigitalWrite(4,HIGH);\nanalogWrite(5,' + value_front + ');\n';
     return code;
 };
 
@@ -3154,11 +3154,11 @@ const tank_BACK = function (_, generator) {
     var value_back = generator.valueToCode(this, 'speed_B', generator.ORDER_ATOMIC);
 
     //generator.setups_['setup_back_'] = 'pinMode(4, OUTPUT);\n  pinMode(2, OUTPUT);';  //这样会在setup里会重复叠加
-    generator.setups_['setup_output_m1'] = 'pinMode(4, OUTPUT);';
-    generator.setups_['setup_output_p1'] = 'pinMode(5, OUTPUT);';
-    generator.setups_['setup_output_m2'] = 'pinMode(2, OUTPUT);';
-    generator.setups_['setup_output_p2'] = 'pinMode(6, OUTPUT);';
-    var code = 'digitalWrite(4,LOW);\nanalogWrite(5,' + value_back + ');\ndigitalWrite(2,LOW);\nanalogWrite(6,' + value_back + ');\n';
+    generator.setups_['setup_output_m1'] = 'pinMode(2, OUTPUT);';
+    generator.setups_['setup_output_p1'] = 'pinMode(6, OUTPUT);';
+    generator.setups_['setup_output_m2'] = 'pinMode(4, OUTPUT);';
+    generator.setups_['setup_output_p2'] = 'pinMode(5, OUTPUT);';
+    var code = 'digitalWrite(2,LOW);\nanalogWrite(6,' + value_back + ');\ndigitalWrite(4,LOW);\nanalogWrite(5,' + value_back + ');\n';
     return code;
 };
 
@@ -3168,21 +3168,21 @@ const tank_LEFT = function (_, generator) {
     var value_left = generator.valueToCode(this, 'speed_L', generator.ORDER_ATOMIC);
 
     //generator.setups_['setup_back_'] = 'pinMode(4, OUTPUT);\n  pinMode(2, OUTPUT);';
-    generator.setups_['setup_output_m1'] = 'pinMode(4, OUTPUT);';
-    generator.setups_['setup_output_p1'] = 'pinMode(5, OUTPUT);';
-    generator.setups_['setup_output_m2'] = 'pinMode(2, OUTPUT);';
-    generator.setups_['setup_output_p2'] = 'pinMode(6, OUTPUT);';
-    var code = 'digitalWrite(4,LOW);\nanalogWrite(5,' + value_left + ');\ndigitalWrite(2,HIGH);\nanalogWrite(6,' + value_left + ');\n';
+    generator.setups_['setup_output_m1'] = 'pinMode(2, OUTPUT);';
+    generator.setups_['setup_output_p1'] = 'pinMode(6, OUTPUT);';
+    generator.setups_['setup_output_m2'] = 'pinMode(4, OUTPUT);';
+    generator.setups_['setup_output_p2'] = 'pinMode(5, OUTPUT);';
+    var code = 'digitalWrite(2,LOW);\nanalogWrite(6,' + value_left + ');\ndigitalWrite(4,HIGH);\nanalogWrite(5,' + value_left + ');\n';
     return code;
 };
 
 ////////////////////////////////turn_left//////////////////////////
 const tank_TURN_LEFT = function (_, generator) {
-    generator.setups_['setup_output_m1'] = 'pinMode(4, OUTPUT);';
-    generator.setups_['setup_output_p1'] = 'pinMode(5, OUTPUT);';
-    generator.setups_['setup_output_m2'] = 'pinMode(2, OUTPUT);';
-    generator.setups_['setup_output_p2'] = 'pinMode(6, OUTPUT);';
-    var code = 'digitalWrite(4,HIGH);\nanalogWrite(5,100);\ndigitalWrite(2,HIGH);\nanalogWrite(6,180);\n';
+    generator.setups_['setup_output_m1'] = 'pinMode(2, OUTPUT);';
+    generator.setups_['setup_output_p1'] = 'pinMode(6, OUTPUT);';
+    generator.setups_['setup_output_m2'] = 'pinMode(4, OUTPUT);';
+    generator.setups_['setup_output_p2'] = 'pinMode(5, OUTPUT);';
+    var code = 'digitalWrite(2,HIGH);\nanalogWrite(6,100);\ndigitalWrite(4,HIGH);\nanalogWrite(5,180);\n';
     return code;
 };
 
@@ -3193,33 +3193,33 @@ const tank_RIGHT = function (_, generator) {
     var value_right = generator.valueToCode(this, 'speed_R', generator.ORDER_ATOMIC);
 
     //generator.setups_['setup_back_'] = 'pinMode(4, OUTPUT);\n  pinMode(2, OUTPUT);';
-    generator.setups_['setup_output_m1'] = 'pinMode(4, OUTPUT);';
-    generator.setups_['setup_output_p1'] = 'pinMode(5, OUTPUT);';
-    generator.setups_['setup_output_m2'] = 'pinMode(2, OUTPUT);';
-    generator.setups_['setup_output_p2'] = 'pinMode(6, OUTPUT);';
-    var code = 'digitalWrite(4,HIGH);\nanalogWrite(5,' + value_right + ');\ndigitalWrite(2,LOW);\nanalogWrite(6,' + value_right + ');\n';
+    generator.setups_['setup_output_m1'] = 'pinMode(2, OUTPUT);';
+    generator.setups_['setup_output_p1'] = 'pinMode(6, OUTPUT);';
+    generator.setups_['setup_output_m2'] = 'pinMode(4, OUTPUT);';
+    generator.setups_['setup_output_p2'] = 'pinMode(5, OUTPUT);';
+    var code = 'digitalWrite(2,HIGH);\nanalogWrite(6,' + value_right + ');\ndigitalWrite(4,LOW);\nanalogWrite(5,' + value_right + ');\n';
     return code;
 };
 
 ////////////////////////////////turn_right//////////////////////////
 const tank_TURN_RIGHT = function (_, generator) {
 
-    generator.setups_['setup_output_m1'] = 'pinMode(4, OUTPUT);';
-    generator.setups_['setup_output_p1'] = 'pinMode(5, OUTPUT);';
-    generator.setups_['setup_output_m2'] = 'pinMode(2, OUTPUT);';
-    generator.setups_['setup_output_p2'] = 'pinMode(6, OUTPUT);';
-    var code = 'digitalWrite(4,HIGH);\nanalogWrite(5,180);\ndigitalWrite(2,HIGH);\nanalogWrite(6,100);\n';
+    generator.setups_['setup_output_m1'] = 'pinMode(2, OUTPUT);';
+    generator.setups_['setup_output_p1'] = 'pinMode(6, OUTPUT);';
+    generator.setups_['setup_output_m2'] = 'pinMode(4, OUTPUT);';
+    generator.setups_['setup_output_p2'] = 'pinMode(5, OUTPUT);';
+    var code = 'digitalWrite(2,HIGH);\nanalogWrite(6,180);\ndigitalWrite(4,HIGH);\nanalogWrite(5,100);\n';
     return code;
 };
 
 ////////////////////////////////stop//////////////////////////
 const tank_STOP = function (_, generator) {
     //generator.setups_['setup_back_'] = 'pinMode(4, OUTPUT);\n  pinMode(2, OUTPUT);';
-    generator.setups_['setup_output_m1'] = 'pinMode(4, OUTPUT);';
-    generator.setups_['setup_output_p1'] = 'pinMode(5, OUTPUT);';
-    generator.setups_['setup_output_m2'] = 'pinMode(2, OUTPUT);';
-    generator.setups_['setup_output_p2'] = 'pinMode(6, OUTPUT);';
-    var code = 'digitalWrite(4,LOW);\nanalogWrite(5,0);\ndigitalWrite(2,LOW);\nanalogWrite(6,0);\n';
+    generator.setups_['setup_output_m1'] = 'pinMode(2, OUTPUT);';
+    generator.setups_['setup_output_p1'] = 'pinMode(6, OUTPUT);';
+    generator.setups_['setup_output_m2'] = 'pinMode(4, OUTPUT);';
+    generator.setups_['setup_output_p2'] = 'pinMode(5, OUTPUT);';
+    var code = 'digitalWrite(2,LOW);\nanalogWrite(6,0);\ndigitalWrite(4,LOW);\nanalogWrite(5,0);\n';
     return code;
 };
 
@@ -3253,9 +3253,9 @@ const Tank_servo2 = function (_, generator) {
     var value_degree = generator.valueToCode(this, 'angle', generator.ORDER_ATOMIC);
 
     generator.definitions_['include_pulsewidth'] = 'volatile int pulsewidth;';
-    generator.definitions_['var_angle'] = 'void procedure(int myangle) {\n  for (int i = 0; i <= 50; i = i + (1)) {\n    pulsewidth = myangle * 11 + 500;\n    digitalWrite(9,HIGH);\n    delayMicroseconds(pulsewidth);\n    digitalWrite(9,LOW);\n    delay((20 - pulsewidth / 1000));\n  }\n}\n';
+    generator.definitions_['var_angle'] = 'void procedure(int myangle) {\n  for (int i = 0; i <= 50; i = i + (1)) {\n    pulsewidth = myangle * 11 + 500;\n    digitalWrite(10,HIGH);\n    delayMicroseconds(pulsewidth);\n    digitalWrite(10,LOW);\n    delay((20 - pulsewidth / 1000));\n  }\n}\n';
 
-    generator.setups_['setup_servo'] = 'pulsewidth = 0;\n  pinMode(9, OUTPUT);';
+    generator.setups_['setup_servo'] = 'pulsewidth = 0;\n  pinMode(10, OUTPUT);';
 
     var code = 'procedure(' + value_degree + ');\n';
     return code;
@@ -3359,8 +3359,7 @@ const Tank_ir_r = function (_, generator) {
     generator.definitions_['var_declare' + variable] = 'long ' + variable + ';';
     //var dropdown_pin = generator.valueToCode(this, 'PIN', generator.ORDER_ATOMIC);
     var branch = generator.statementToCode(this, 'DO');
-    var branch2 = generator.statementToCode(this, 'DO2');
-    generator.definitions_['1include_IRremote'] = '#include <IRremote.h>\n';
+    generator.definitions_['1include_IRremote'] = '#include "KE_IRremote.h"\n';
     //generator.definitions_['var_declare'+varName] = 'long '+varName+';\n';
     generator.definitions_['2var_ir_recv_3'] = 'IRrecv irrecv(3);\ndecode_results results;\n';
     generator.setups_['setup_ir_recv_3'] = 'irrecv.enableIRIn();';
@@ -3375,8 +3374,6 @@ const Tank_ir_r = function (_, generator) {
     code += '  Serial.print("IR TYPE:"+type+"  ");\n';
     code += branch;
     code += '  irrecv.resume();\n'
-    code += '} else {\n';
-    code += branch2;
     code += '}\n';
     return code;
 };
@@ -3676,7 +3673,7 @@ const turtle_ir_r = function (_, generator) {
     //var dropdown_pin = generator.valueToCode(this, 'PIN', generator.ORDER_ATOMIC);
     var branch = generator.statementToCode(this, 'DO');
     var branch2 = generator.statementToCode(this, 'DO2');
-    generator.definitions_['1include_IRremote'] = '#include <IRremote.h>\n';
+    generator.definitions_['1include_IRremote'] = '#include <KE_IRremote.h>\n';
     //generator.definitions_['var_declare'+varName] = 'long '+varName+';\n';
     generator.definitions_['2var_ir_recv_A1'] = 'IRrecv irrecv(A1);\ndecode_results results;\n';
     generator.setups_['setup_ir_recv_A1'] = 'irrecv.enableIRIn();';

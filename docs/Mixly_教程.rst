@@ -1,26 +1,27 @@
-.. _7-mixly_教程:
+.. _6-mixly_教程:
 
-7. Mixly_教程
+6. Mixly_教程
 =============
 
-.. _71-mixly_资料下载:
+.. _61-mixly_资料下载:
 
-7.1. Mixly_资料下载
+6.1. Mixly_资料下载
 -------------------
 
 \ **⚠️特别提示:**
 请先下载本教程需要用到的Mixly_资料(包含：Mixly_代码、Mixly库文件等）和Android_APP等，保存至您方便使用的路径下。
 
-**下载：** :download:`Mixly_资料 <./Mixly_资料.7z>` 和 :download:`Android_APP <./Android_APP.7z>`
+**下载：** :download:`Mixly_资料 <./Mixly_资料.7z>` 和
+:download:`Android_APP <./Android_APP.7z>`
 
-.. _72-mixly-ide-开发环境设置:
+.. _62-mixly-ide-开发环境设置:
 
-7.2. Mixly IDE 开发环境设置
+6.2. Mixly IDE 开发环境设置
 ---------------------------
 
-.. _721-mixly-ide下载安装:
+.. _621-mixly-ide下载安装:
 
-7.2.1. Mixly IDE下载、安装
+6.2.1. Mixly IDE下载、安装
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **下载软件：**
@@ -50,9 +51,9 @@ Mixly For Linux(根据系统选择)：
 
 |image3|
 
-.. _722-mixly-ide安装及页面介绍:
+.. _622-mixly-ide安装及页面介绍:
 
-7.2.2. Mixly IDE安装及页面介绍
+6.2.2. Mixly IDE安装及页面介绍
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Windows版本安装**
@@ -141,9 +142,9 @@ https://www.bilibili.com/video/BV1YE411A7FT
 
 https://wiki.mixly.org/
 
-.. _73-添加mixly库文件:
+.. _63-添加mixly库文件:
 
-7.3. 添加Mixly库文件
+6.3. 添加Mixly库文件
 --------------------
 
 （以下是以Windows系统为例，MacOS系统可以参考）
@@ -183,9 +184,9 @@ Mixly软件下载安装后，点击 Arduino AVR
 
 |image27|
 
-.. _74-mixly-ide的使用方法:
+.. _64-mixly-ide的使用方法:
 
-7.4. Mixly IDE的使用方法：
+6.4. Mixly IDE的使用方法：
 --------------------------
 
 接下来，我们将以UNO R3控制板控制LED亮灭为例：
@@ -232,9 +233,9 @@ Uno”和串口端口（COM26），如下图所示：
 
 |image38|
 
-.. _75-项目教程:
+.. _65-项目教程:
 
-7.5. 项目教程
+6.5. 项目教程
 -------------
 
 好了，所有的东西都已经准备完毕，我们正式开始迷你坦克机器人的编程项目。前面我们从简单的传感器和模块开始，循序渐进完成模块传感器的测试项目，现在再来完成几个不同类型的机器人，最后我们把所有学到的知识结合到一起，完成一个综合的项目：多功能桌面小车。
