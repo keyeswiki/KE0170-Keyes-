@@ -1,5 +1,7 @@
-坦克机器人安装
-==============
+.. _3-坦克机器人安装:
+
+3. 坦克机器人安装
+=================
 
 |Img|
 
@@ -193,20 +195,18 @@ D3的接线端**\ ）
 
 |image40|
 
-\ **⚠️特别注意:** 初始化舵机角度为90°的代码,请点击下载：\ :download:`舵机初始化角度_代码 <./舵机初始化角度_代码.7z>`
+\ **⚠️特别注意:** 初始化舵机角度为90°的代码,
+请点击下载：\ :download:`舵机初始化角度_代码 <./舵机初始化角度_代码.7z>`
 
 |image41|
+
+**以下三种方法，根据自己的情况自由选择。**
 
 **方法一：Arduino 代码**
 
 \ **⚠️特别提示:** 在编写代码并上传之前，必须安装Arduino
 IDE，请进入链接查看：\ `Arduino
 IDE开发环境设置 <https://www.keyesrobot.cn/projects/KE0170/zh-cn/latest/docs/Arduino_C%E6%95%99%E7%A8%8B.html#arduino-ide>`__
-
-**需要先在Arduino
-IDE中安装舵机库文件，舵机库文件的所在位置路径：..\\舵机初始化角度_代码\\舵机初始化角度需要安装的库文件，再运行舵机角度初始化代码。**
-
-|image42|
 
 .. code:: c
 
@@ -240,7 +240,7 @@ IDE中安装舵机库文件，舵机库文件的所在位置路径：..\\舵机�
 ，打开文件\ **Servo_Initialization_Angle_Code.ino**\ 。或将上述测试代码复制粘贴到Arduino
 IDE中。
 
-|image43|
+|image42|
 
 将上述测试代码上传至主板之后，未发现舵机转动，可以按下主板上的复位键。
 
@@ -250,104 +250,123 @@ IDE中。
 IDE，请进入链接查看：\ `KidsBlock
 IDE开发环境设置 <https://www.keyesrobot.cn/projects/KE0170/zh-cn/latest/docs/KidsBlock%28Scratch%29_%E6%95%99%E7%A8%8B.html#kidsblock-ide>`__
 
-|image44|
+|image43|
 
 如何得到它？
 
 资料提供了调整窗户舵机的代码，请打开并烧录到主板，如下图所示。在文件夹
-**..\\舵机初始化角度_代码** ，使用 KidsBlock IDE
-打开文件\ **舵机初始化角度_代码.sb3**\ 。或在KidsBlock
+**..\\舵机初始化角度_代码** ，使用 KidsBlock IDE 打开文件
+**舵机初始化角度_代码.sb3**\ 。或在KidsBlock
 IDE中直接拖动代码块编写上述测试代码。
 
+|image44|
+
+上传上述测试代码，未发现舵机转动，可以按下主板上的复位键。
+
+**方法三：Mixly代码**
+
+\ **⚠️特别提示:** 在编写代码并上传之前，必须安装 Mixly
+IDE，请进入链接查看：\ `Mixly
+IDE开发环境设置 <https://www.keyesrobot.cn/projects/KE0170/zh-cn/latest/docs/KidsBlock%28Scratch%29_%E6%95%99%E7%A8%8B.html#kidsblock-ide>`__
+
 |image45|
+
+如何得到它？
+
+资料提供了调整窗户舵机的代码，请打开并烧录到主板，如下图所示。在文件夹
+**..\\舵机初始化角度_代码** ，使用 Mixly IDE 打开文件
+**舵机初始化角度_代码.sb3**\ 。或在KidsBlock
+IDE中直接拖动代码块编写上述测试代码。
+
+|image46|
 
 上传上述测试代码，未发现舵机转动，可以按下主板上的复位键。
 
 分步安装1
 
-|image46|
+|image47|
 
 分步安装2
 
-|image47|
+|image48|
 
 完成
 
-|image48|
+|image49|
 
 **安装12**
 
 安装所需零件
 
-|image49|
+|image50|
 
 安装
 
-|image50|
+|image51|
 
 完成
 
-|image51|
+|image52|
 
 **插入针盖**
 
-|image52|
-
 |image53|
+
+|image54|
 
 **接线示意图**
 
 左边光敏接线图
 
-|image54|
+|image55|
 
 右边光敏接线图
 
-|image55|
+|image56|
 
 红外模块接线图
 
-|image56|
+|image57|
 
 超声波模块接线图
 
-|image57|
+|image58|
 
 左侧电机接线图
 
-|image58|
+|image59|
 
 右侧电机接线图
 
-|image59|
+|image60|
 
 舵机接线图
 
-|image60|
+|image61|
 
 LED点阵接线图
 
-|image61|
+|image62|
 
 电源接线图
 
-|image62|
+|image63|
 
 插入蓝牙模块图
-
-|image63|
 
 |image64|
 
 |image65|
 
+|image66|
+
 完成渲染图
 
-|image66|
+|image67|
 
 电池安装示范
 
-|image67|
+|image68|
 
 .. |Img| image:: ./media/img-20250610140852.png
 .. |image1| image:: media/cdb679dc45644055a314eba46795bdec.jpg
@@ -391,29 +410,30 @@ LED点阵接线图
 .. |image39| image:: ./media/img-20250611090009.jpg
 .. |image40| image:: ./media/img-202506101549101.png
 .. |image41| image:: ./media/img-20250612082247.png
-.. |image42| image:: ./media/img-20250612081922.png
-.. |image43| image:: ./media/img-20250610170215.png
-.. |image44| image:: ./media/img-20250610163504.png
-.. |image45| image:: ./media/img-20250610164209.png
-.. |image46| image:: media/580ca696f9a7883b2a7824982f448992.jpg
-.. |image47| image:: media/8e6bf9301a4f07f7b2e71c483c703f56.jpg
-.. |image48| image:: media/6c55458d368334937ff59b0dd915945e.jpeg
-.. |image49| image:: media/c26599005156752570362703f29df031.jpg
-.. |image50| image:: media/634c5b4196301261cc77926c0c315b44.jpg
-.. |image51| image:: media/e341099eb81bceb9709bba25721f7dbd.jpg
-.. |image52| image:: media/7aea00804cba367670e3a7f621f1b729.jpeg
-.. |image53| image:: ./media/img-20250610144106.png
-.. |image54| image:: media/e257e931c676ce50d7e5f392dbaff50a.jpeg
-.. |image55| image:: media/0e616a583f293370f8fd8cb1644bbcac.jpg
-.. |image56| image:: media/1741ef2924b40fb3df8005cf533ed326.jpg
-.. |image57| image:: media/66dba600933196ca372171b81cbb1cae.jpeg
-.. |image58| image:: media/94ee43a82688af27861dd1f83430f29b.jpg
-.. |image59| image:: media/f1ca8541410f483bf0705761bf085190.jpg
-.. |image60| image:: media/f35521bf12c8d7c958208a7608c6143a.jpeg
-.. |image61| image:: media/4b97dfffd78fee370410a448281e46af.jpeg
-.. |image62| image:: media/8439c8a0b226bd0f7f908a51fa5082ee.jpeg
-.. |image63| image:: media/fd7822473317d96c0d893daf9f6a4a62.jpg
-.. |image64| image:: ./media/img-20250610153020.png
-.. |image65| image:: ./media/img-20250610153047.png
-.. |image66| image:: ./media/img-20250610153131.png
-.. |image67| image:: ./media/img-20250610154910.png
+.. |image42| image:: ./media/img-20250610170215.png
+.. |image43| image:: ./media/img-20250610163504.png
+.. |image44| image:: ./media/img-20250610164209.png
+.. |image45| image:: ./media/img-20250619140536.png
+.. |image46| image:: ./media/img-20250619141648.png
+.. |image47| image:: media/580ca696f9a7883b2a7824982f448992.jpg
+.. |image48| image:: media/8e6bf9301a4f07f7b2e71c483c703f56.jpg
+.. |image49| image:: media/6c55458d368334937ff59b0dd915945e.jpeg
+.. |image50| image:: media/c26599005156752570362703f29df031.jpg
+.. |image51| image:: media/634c5b4196301261cc77926c0c315b44.jpg
+.. |image52| image:: media/e341099eb81bceb9709bba25721f7dbd.jpg
+.. |image53| image:: media/7aea00804cba367670e3a7f621f1b729.jpeg
+.. |image54| image:: ./media/img-20250610144106.png
+.. |image55| image:: media/e257e931c676ce50d7e5f392dbaff50a.jpeg
+.. |image56| image:: media/0e616a583f293370f8fd8cb1644bbcac.jpg
+.. |image57| image:: media/1741ef2924b40fb3df8005cf533ed326.jpg
+.. |image58| image:: media/66dba600933196ca372171b81cbb1cae.jpeg
+.. |image59| image:: media/94ee43a82688af27861dd1f83430f29b.jpg
+.. |image60| image:: media/f1ca8541410f483bf0705761bf085190.jpg
+.. |image61| image:: media/f35521bf12c8d7c958208a7608c6143a.jpeg
+.. |image62| image:: media/4b97dfffd78fee370410a448281e46af.jpeg
+.. |image63| image:: media/8439c8a0b226bd0f7f908a51fa5082ee.jpeg
+.. |image64| image:: media/fd7822473317d96c0d893daf9f6a4a62.jpg
+.. |image65| image:: ./media/img-20250610153020.png
+.. |image66| image:: ./media/img-20250610153047.png
+.. |image67| image:: ./media/img-20250610153131.png
+.. |image68| image:: ./media/img-20250610154910.png
