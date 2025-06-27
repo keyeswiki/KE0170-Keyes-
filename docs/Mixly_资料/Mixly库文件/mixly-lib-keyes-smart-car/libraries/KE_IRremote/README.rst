@@ -1,15 +1,13 @@
 IRremote Arduino Library
 ========================
 
-Available as Arduino library "IRremote"
-
-.. _version-270:
+Available as Arduino library “IRremote”
 
 `Version 2.7.0 <https://github.com/z3t0/Arduino-IRremote/releases>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|License: GPL v2| |Installation instructions| |Join the chat at|
-https://gitter.im/z3t0/Arduino-IRremote |LibraryBuild|
+|License: GPL v2| |Installation instructions| |Join the chat at
+https://gitter.im/z3t0/Arduino-IRremote| |LibraryBuild|
 
 This library enables you to send and receive using infra-red signals on
 an Arduino.
@@ -32,13 +30,13 @@ FAQ
   handler from running when it needs to. There are some solutions to
   this on some processors, `see this page from Marc
   MERLIN <http://marc.merlins.org/perso/arduino/post_2017-04-03_Arduino-328P-Uno-Teensy3_1-ESP8266-ESP32-IR-and-Neopixels.html>`__
-- The default IR timer on AVR's is timer 2. Since the Arduino Tone
+- The default IR timer on AVR’s is timer 2. Since the Arduino Tone
   library as well as analogWrite() for pin 3 and pin 11 requires timer
   2, this functionality cannot be used simultaneously.
 - You can use **multiple IR receiver** by just connecting the output
   pins of several IR receivers together. The IR receivers use an NPN
   transistor as output device with just a 30k resistor to VCC. This is
-  almost "open collector" and allows connecting of several output pins
+  almost “open collector” and allows connecting of several output pins
   to one Arduino input pin.
 
 Supported IR Protocols
@@ -97,26 +95,25 @@ Hints
 -----
 
 If you do not know which protocol your IR transmitter uses, you have
-several choices.
-
-- Use the `IRreceiveDumpV2 example <examples/IRreceiveDumpV2>`__ to dump
-  out the IR timing. You can then reproduce/send this timing with the
-  `IRsendRawDemo example <examples/IRsendRawDemo>`__. For **long codes**
-  like from air conditioners, you can **change the length of the input
-  buffer** in `IRremoteInt.h <src/private/IRremoteInt.h#L30>`__.
-- If you have a bigger Arduino board at hand (> 100 kByte program space)
-  you can try the `IRremoteDecode
-  example <https://github.com/bengtmartensson/Arduino-DecodeIR/blob/master/examples/IRremoteDecode/IRremoteDecode.ino>`__
-  of the Arduino library DecodeIR.
-- Use `IrScrutinizer <http://www.harctoolbox.org/IrScrutinizer.html>`__.
-  It can automatically generate a send sketch for your protocol by
-  exporting as "Arduino Raw". It supports IRremote, the old
-  `IRLib <https://github.com/cyborg5/IRLib>`__ and
-  `Infrared4Arduino <https://github.com/bengtmartensson/Infrared4Arduino>`__.
+several choices. - Use the `IRreceiveDumpV2
+example <examples/IRreceiveDumpV2>`__ to dump out the IR timing. You can
+then reproduce/send this timing with the `IRsendRawDemo
+example <examples/IRsendRawDemo>`__. For **long codes** like from air
+conditioners, you can **change the length of the input buffer** in
+`IRremoteInt.h <src/private/IRremoteInt.h#L30>`__. - If you have a
+bigger Arduino board at hand (> 100 kByte program space) you can try the
+`IRremoteDecode
+example <https://github.com/bengtmartensson/Arduino-DecodeIR/blob/master/examples/IRremoteDecode/IRremoteDecode.ino>`__
+of the Arduino library DecodeIR. - Use
+`IrScrutinizer <http://www.harctoolbox.org/IrScrutinizer.html>`__. It
+can automatically generate a send sketch for your protocol by exporting
+as “Arduino Raw”. It supports IRremote, the old
+`IRLib <https://github.com/cyborg5/IRLib>`__ and
+`Infrared4Arduino <https://github.com/bengtmartensson/Infrared4Arduino>`__.
 - Use the `IRMP AllProtocol
-  example <https://github.com/ukw100/IRMP#allprotocol-example>`__ and
-  check the serial output if the protocol is one of the 40 supported
-  protocols.
+example <https://github.com/ukw100/IRMP#allprotocol-example>`__ and
+check the serial output if the protocol is one of the 40 supported
+protocols.
 
 Other IR libraries
 ------------------
@@ -143,7 +140,7 @@ Supported Boards
 - ATtiny84, 85
 - SAMD21 (receive only)
 - ESP32
-- ESP8266 is supported in a fork based on an old codebase that isn't as
+- ESP8266 is supported in a fork based on an old codebase that isn’t as
   recent, but it works reasonably well given that perfectly timed sub
   millisecond interrupts are different on that chip. See
   https://github.com/markszabo/IRremoteESP8266
@@ -159,88 +156,78 @@ Hardware specifications
 The timer and the pin usage can be adjusted in
 `IRremoteBoardDefs.h <src/private/IRremoteBoardDefs.h>`__
 
-+--------------------------+---------------------+-------------------+
-| Board/CPU                | IR-Send (PWM) Pin   | Timers            |
-+==========================+=====================+===================+
-| `ATtiny8                 | **6**               | **1**             |
-| 4 <https://github.com/Sp |                     |                   |
-| enceKonde/ATTinyCore>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
-| `ATtiny85 > 1            | **1**               | **0**             |
-| MH                       |                     |                   |
-| z <https://github.com/Sp |                     |                   |
-| enceKonde/ATTinyCore>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
-| `                        | **9**               | **1**             |
-| ATmega8 <https://github. |                     |                   |
-| com/MCUdude/MiniCore>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
-| `ATmega48, ATmega88,     | **3**, 9            | 1, **2**          |
-| ATmega168,               |                     |                   |
-| AT                       |                     |                   |
-| mega328 <https://github. |                     |                   |
-| com/MCUdude/MiniCore>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
-| `ATmeg                   | 13, 14, 6           | 1, **2**, 3       |
-| a1284 <https://github.co |                     |                   |
-| m/MCUdude/MightyCore>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
-| `ATmega164, ATmega324,   | 13, **14**          | 1, **2**          |
-| ATme                     |                     |                   |
-| ga644 <https://github.co |                     |                   |
-| m/MCUdude/MightyCore>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
-| `ATmega8535 ATmega16,    | **13**              | **1**             |
-| ATm                      |                     |                   |
-| ega32 <https://github.co |                     |                   |
-| m/MCUdude/MightyCore>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
-| `ATmega64, ATmega128,    | **13**              | **1**             |
-| ATmega1281,              |                     |                   |
-| ATm                      |                     |                   |
-| ega2561 <https://github. |                     |                   |
-| com/MCUdude/MegaCore>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
-| `ATmega8515,             | **13**              | **1**             |
-| ATm                      |                     |                   |
-| ega162 <https://github.c |                     |                   |
-| om/MCUdude/MajorCore>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
-| ATmega1280, ATmega2560   | 5, 6, **9**, 11, 46 | 1, **2**, 3, 4, 5 |
-+--------------------------+---------------------+-------------------+
-| ATmega4809               | 5, 6, **9**, 11, 46 | **TCB0**          |
-+--------------------------+---------------------+-------------------+
-| Leonardo (Atmega32u4)    | 5, **9**, 13        | 1, 3, **4_HS**    |
-+--------------------------+---------------------+-------------------+
-| Zero (SAMD)              | \*, **9**           | **TC3**           |
-+--------------------------+---------------------+-------------------+
-| `ESP3                    | **4**, all pins     | **1**             |
-| 2 <http://esp32.net/>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
-| `Sparkfun Pro            | **5**, 9            | 1, **3**          |
-| Mi                       |                     |                   |
-| cro <https://www.sparkfu |                     |                   |
-| n.com/products/12640>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
-| `Teensy                  | **17**              | **1**             |
-| 1.0 <https://            |                     |                   |
-| www.pjrc.com/teensy/>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
-| `Teensy                  | **9**, 10, 14       | 1, **3**, 4_HS    |
-| 2.0 <https://            |                     |                   |
-| www.pjrc.com/teensy/>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
-| `Teensy++ 1.0 /          | **1**, 16, 25       | 1, **2**, 3       |
-| 2.0 <https://            |                     |                   |
-| www.pjrc.com/teensy/>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
-| `Teensy 3.0 /            | **5**               | **CMT**           |
-| 3.1 <https://            |                     |                   |
-| www.pjrc.com/teensy/>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
-| `Teensy-LC <https://     | **16**              | **TPM1**          |
-| www.pjrc.com/teensy/>`__ |                     |                   |
-+--------------------------+---------------------+-------------------+
++---------------------------------------------+------------+-----------+
+| Board/CPU                                   | IR-Send    | Timers    |
+|                                             | (PWM) Pin  |           |
++=============================================+============+===========+
+| `ATtiny84 <ht                               | **6**      | **1**     |
+| tps://github.com/SpenceKonde/ATTinyCore>`__ |            |           |
++---------------------------------------------+------------+-----------+
+| `ATtiny85 > 1                               | **1**      | **0**     |
+| MHz <ht                                     |            |           |
+| tps://github.com/SpenceKonde/ATTinyCore>`__ |            |           |
++---------------------------------------------+------------+-----------+
+| `ATmeg                                      | **9**      | **1**     |
+| a8 <https://github.com/MCUdude/MiniCore>`__ |            |           |
++---------------------------------------------+------------+-----------+
+| `ATmega48, ATmega88, ATmega168,             | **3**, 9   | 1, **2**  |
+| ATmega3                                     |            |           |
+| 28 <https://github.com/MCUdude/MiniCore>`__ |            |           |
++---------------------------------------------+------------+-----------+
+| `ATmega1284                                 | 13, 14, 6  | 1, **2**, |
+|  <https://github.com/MCUdude/MightyCore>`__ |            | 3         |
++---------------------------------------------+------------+-----------+
+| `ATmega164, ATmega324,                      | 13, **14** | 1, **2**  |
+| ATmega644                                   |            |           |
+|  <https://github.com/MCUdude/MightyCore>`__ |            |           |
++---------------------------------------------+------------+-----------+
+| `ATmega8535 ATmega16,                       | **13**     | **1**     |
+| ATmega32                                    |            |           |
+|  <https://github.com/MCUdude/MightyCore>`__ |            |           |
++---------------------------------------------+------------+-----------+
+| `ATmega64, ATmega128, ATmega1281,           | **13**     | **1**     |
+| ATmega25                                    |            |           |
+| 61 <https://github.com/MCUdude/MegaCore>`__ |            |           |
++---------------------------------------------+------------+-----------+
+| `ATmega8515,                                | **13**     | **1**     |
+| ATmega16                                    |            |           |
+| 2 <https://github.com/MCUdude/MajorCore>`__ |            |           |
++---------------------------------------------+------------+-----------+
+| ATmega1280, ATmega2560                      | 5, 6,      | 1, **2**, |
+|                                             | **9**, 11, | 3, 4, 5   |
+|                                             | 46         |           |
++---------------------------------------------+------------+-----------+
+| ATmega4809                                  | 5, 6,      | **TCB0**  |
+|                                             | **9**, 11, |           |
+|                                             | 46         |           |
++---------------------------------------------+------------+-----------+
+| Leonardo (Atmega32u4)                       | 5, **9**,  | 1, 3,     |
+|                                             | 13         | **4_HS**  |
++---------------------------------------------+------------+-----------+
+| Zero (SAMD)                                 | \*, **9**  | **TC3**   |
++---------------------------------------------+------------+-----------+
+| `ESP32 <http://esp32.net/>`__               | **4**, all | **1**     |
+|                                             | pins       |           |
++---------------------------------------------+------------+-----------+
+| `Sparkfun Pro                               | **5**, 9   | 1, **3**  |
+| Micro <                                     |            |           |
+| https://www.sparkfun.com/products/12640>`__ |            |           |
++---------------------------------------------+------------+-----------+
+| `Teensy                                     | **17**     | **1**     |
+| 1.0 <https://www.pjrc.com/teensy/>`__       |            |           |
++---------------------------------------------+------------+-----------+
+| `Teensy                                     | **9**, 10, | 1, **3**, |
+| 2.0 <https://www.pjrc.com/teensy/>`__       | 14         | 4_HS      |
++---------------------------------------------+------------+-----------+
+| `Teensy++ 1.0 /                             | **1**, 16, | 1, **2**, |
+| 2.0 <https://www.pjrc.com/teensy/>`__       | 25         | 3         |
++---------------------------------------------+------------+-----------+
+| `Teensy 3.0 /                               | **5**      | **CMT**   |
+| 3.1 <https://www.pjrc.com/teensy/>`__       |            |           |
++---------------------------------------------+------------+-----------+
+| `                                           | **16**     | **TPM1**  |
+| Teensy-LC <https://www.pjrc.com/teensy/>`__ |            |           |
++---------------------------------------------+------------+-----------+
 
 Revision History
 ----------------
@@ -267,13 +254,9 @@ generated ``api-doc/index.html`` can now be opened in a browser.
 Contributing
 ------------
 
-If you want to contribute to this project:
-
-- Report bugs and errors
-- Ask for enhancements
-- Create issues and pull requests
-- Tell other people about this library
-- Contribute new protocols
+If you want to contribute to this project: - Report bugs and errors -
+Ask for enhancements - Create issues and pull requests - Tell other
+people about this library - Contribute new protocols
 
 Check
 `here <https://github.com/z3t0/Arduino-IRremote/blob/master/Contributing.md>`__
@@ -305,7 +288,7 @@ Copyright 2009-2012 Ken Shirriff Copyright (c) 2016 Rafi Khan
    :target: https://www.gnu.org/licenses/gpl-2.0
 .. |Installation instructions| image:: https://www.ardu-badge.com/badge/IRremote.svg?
    :target: https://www.ardu-badge.com/IRremote
-.. |Join the chat at| image:: https://badges.gitter.im/Join%20Chat.svg
+.. |Join the chat at https://gitter.im/z3t0/Arduino-IRremote| image:: https://badges.gitter.im/Join%20Chat.svg
    :target: https://gitter.im/z3t0/Arduino-IRremote?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 .. |LibraryBuild| image:: https://github.com/z3t0/Arduino-IRremote/workflows/LibraryBuild/badge.svg
    :target: https://github.com/z3t0/Arduino-IRremote/actions

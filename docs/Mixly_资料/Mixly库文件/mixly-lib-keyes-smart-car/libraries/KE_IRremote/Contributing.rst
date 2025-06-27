@@ -9,37 +9,32 @@ creating a Pull Request with your code changes allows you to share your
 own innovations with the rest of the community.
 
 The following are some guidelines to observe when creating issues or
-PRs:
-
-- Be friendly; it is important that we can all enjoy a safe space as we
-  are all working on the same project and it is okay for people to have
-  different ideas
-- `Use code
-  blocks <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code>`__;
-  **it helps us help you when we can read your code!** On that note also
-  refrain from pasting more than 30 lines of code in a post, instead
-  `create a gist <https://gist.github.com/>`__ **if you need to share
-  large snippets**
-- Use reasonable titles; refrain from using overly long or capitalized
-  titles as they are usually annoying and do little to encourage others
-  to help 😄
-- Be detailed; refrain from mentioning code problems without sharing
-  your source code and always give information regarding your board and
-  version of the library
-- Use the style; we use the original `C Style by Kerninghan /
-  Ritchie <https://en.wikipedia.org/wiki/Indentation_style#K&R_style>`__
-  in `variant: 1TBS
-  (OTBS) <https://en.wikipedia.org/wiki/Indentation_style#Variant:_1TBS_(OTBS)>`__.
-  In short: 4 spaces indentation, no tabs, opening braces on the same
-  line, braces are mandatory on all if/while/do, no hard line length
-  limit. To beautify your code, you may use the online formatter
-  `here <https://www.freecodeformat.com/c-format.php>`__.
-- Choose the right Pull Request target; if you only have **minor changes
-  or adding a new protocol**, choose **master** as target for your Pull
-  Request. If have a change **addressing more general aspects** of this
-  library or think, that the PR should be **discussed and reviewed**,
-  choose the **dev** branch as target for your Pull Request like
-  described `here <https://guides.github.com/introduction/flow/>`__.
+PRs: - Be friendly; it is important that we can all enjoy a safe space
+as we are all working on the same project and it is okay for people to
+have different ideas - `Use code
+blocks <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code>`__;
+**it helps us help you when we can read your code!** On that note also
+refrain from pasting more than 30 lines of code in a post, instead
+`create a gist <https://gist.github.com/>`__ **if you need to share
+large snippets** - Use reasonable titles; refrain from using overly long
+or capitalized titles as they are usually annoying and do little to
+encourage others to help :smile: - Be detailed; refrain from mentioning
+code problems without sharing your source code and always give
+information regarding your board and version of the library - Use the
+style; we use the original `C Style by Kerninghan /
+Ritchie <https://en.wikipedia.org/wiki/Indentation_style#K&R_style>`__
+in `variant: 1TBS
+(OTBS) <https://en.wikipedia.org/wiki/Indentation_style#Variant:_1TBS_(OTBS)>`__.
+In short: 4 spaces indentation, no tabs, opening braces on the same
+line, braces are mandatory on all if/while/do, no hard line length
+limit. To beautify your code, you may use the online formatter
+`here <https://www.freecodeformat.com/c-format.php>`__. - Choose the
+right Pull Request target; if you only have **minor changes or adding a
+new protocol**, choose **master** as target for your Pull Request. If
+have a change **addressing more general aspects** of this library or
+think, that the PR should be **discussed and reviewed**, choose the
+**dev** branch as target for your Pull Request like described
+`here <https://guides.github.com/introduction/flow/>`__.
 
 If there is any need to contact me then you can find my email on the
 README, I do not mind responding to emails but it would be in your own

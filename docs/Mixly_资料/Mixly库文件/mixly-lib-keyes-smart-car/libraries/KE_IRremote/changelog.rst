@@ -1,5 +1,3 @@
-.. _270-202009:
-
 2.7.0 2020/09
 -------------
 
@@ -17,7 +15,7 @@
 - Added flag ``results.isRepeat``.
 - Updated examples.
 
-.. _261-202008:
+.. _section-1:
 
 2.6.1 2020/08
 -------------
@@ -25,7 +23,7 @@
 - Adjusted JVC and LG timing.
 - Fixed 4809 bug.
 
-.. _260-202008:
+.. _section-2:
 
 2.6.0 2020/08
 -------------
@@ -40,10 +38,10 @@
 - Changed Receiver States. Now starting with 0.
 - Changed switch to if / else if in IRRemote.cpp because of ESP32
   compiler bug.
-- Changed ``DEBUG`` handling since compiler warns about empty "IF" or
-  "ELSE" statements in IRRemote.cpp.
+- Changed ``DEBUG`` handling since compiler warns about empty “IF” or
+  “ELSE” statements in IRRemote.cpp.
 
-.. _250-202006:
+.. _section-3:
 
 2.5.0 2020/06
 -------------
@@ -51,7 +49,7 @@
 - Corrected keywords.txt.
 - BoseWave protocol added PR #690.
 - Formatting comply to the new stylesheet.
-- Renamed "boarddefs.h" `ISSUE
+- Renamed “boarddefs.h” `ISSUE
   #375 <https://github.com/z3t0/Arduino-IRremote/issues/375>`__.
 - Renamed ``SEND_PIN`` to ``IR_SEND_PIN``.
 - Renamed state macros.
@@ -71,7 +69,7 @@
 - Added Philips Extended RC-5 protocol support [PR #522]
   (https://github.com/z3t0/Arduino-IRremote/pull/522)
 
-.. _240---20170810:
+.. _section-4:
 
 2.4.0 - 2017/08/10
 ------------------
@@ -79,7 +77,7 @@
 - Cleanup of hardware dependencies. Merge in SAM support `PR
   #437 <https://github.com/z3t0/Arduino-IRremote/pull/437>`__
 
-.. _233---20170331:
+.. _section-5:
 
 2.3.3 - 2017/03/31
 ------------------
@@ -87,7 +85,7 @@
 - Added ESP32 IR receive support `PR
   #427 <https://github.com/z3t0/Arduino-IRremote/pull/425>`__
 
-.. _223---20170327:
+.. _section-6:
 
 2.2.3 - 2017/03/27
 ------------------
@@ -95,7 +93,7 @@
 - Fix calculation of pause length in LEGO PF protocol `PR
   #427 <https://github.com/z3t0/Arduino-IRremote/pull/427>`__
 
-.. _222---20170120:
+.. _section-7:
 
 2.2.2 - 2017/01/20
 ------------------
@@ -103,7 +101,7 @@
 - Fixed naming bug `PR
   #398 <https://github.com/z3t0/Arduino-IRremote/pull/398>`__
 
-.. _221---20160727:
+.. _section-8:
 
 2.2.1 - 2016/07/27
 ------------------
@@ -111,7 +109,7 @@
 - Added tests for Lego Power Functions Protocol `PR
   #336 <https://github.com/z3t0/Arduino-IRremote/pull/336>`__
 
-.. _220---20160628:
+.. _section-9:
 
 2.2.0 - 2016/06/28
 ------------------
@@ -128,7 +126,7 @@
 
 `PR <https://github.com/z3t0/Arduino-IRremote/pull/324>`__
 
-.. _211---20160504:
+.. _section-10:
 
 2.1.1 - 2016/05/04
 ------------------
@@ -136,7 +134,7 @@
 - Added Lego Power Functions Protocol `PR
   #309 <https://github.com/z3t0/Arduino-IRremote/pull/309>`__
 
-.. _210---20160220:
+.. _section-11:
 
 2.1.0 - 2016/02/20
 ------------------
@@ -146,7 +144,7 @@
 - Display TIME instead of TICKS `PR
   #258 <https://github.com/z3t0/Arduino-IRremote/pull/258>`__
 
-.. _204---20160220:
+.. _section-12:
 
 2.0.4 - 2016/02/20
 ------------------
@@ -154,7 +152,7 @@
 - Add Panasonic and JVC to IRrecord example
   `PR <https://github.com/z3t0/Arduino-IRremote/pull/54>`__
 
-.. _203---20160220:
+.. _section-13:
 
 2.0.3 - 2016/02/20
 ------------------
@@ -162,7 +160,7 @@
 - Change IRSend Raw parameter to const
   `PR <https://github.com/z3t0/Arduino-IRremote/pull/227>`__
 
-.. _202---20151202:
+.. _section-14:
 
 2.0.2 - 2015/12/02
 ------------------
@@ -170,8 +168,6 @@
 - Added IRremoteInfo Sketch -
   `PR <https://github.com/z3t0/Arduino-IRremote/pull/241>`__
 - Enforcing changelog.md
-
-.. _201---20150726---release:
 
 2.0.1 - 2015/07/26 - `Release <https://github.com/shirriff/Arduino-IRremote/releases/tag/BETA>`__
 -------------------------------------------------------------------------------------------------
