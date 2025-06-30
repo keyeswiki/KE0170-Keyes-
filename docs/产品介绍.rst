@@ -313,10 +313,7 @@ MHz石英晶体，一个USB连接，一个电源插孔，2个ICSP接头和一个
 1.6 L298P电机驱动扩展板
 -----------------------
 
-.. figure:: ./media/KE0163.png
-   :alt: Img
-
-   Img
+|image58|
 
 1、概述
 
@@ -425,3 +422,4 @@ DC输入电压：DC7V~9V
 .. |image55| image:: media/c09384471e241cabe2f0b887e8b645a2.jpg
 .. |image56| image:: media/259b91cad3470095d1eb58101f5db165.png
 .. |image57| image:: media/06ee496817391727502329769363c6e6.png
+.. |image58| image:: ./media/KE0163.png

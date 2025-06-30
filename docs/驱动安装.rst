@@ -61,6 +61,6 @@
 .. |image6| image:: ./media/Snipaste_2025-05-30_11-34-54.png
 .. |image7| image:: ./media/Snipaste_2025-05-30_11-37-22.png
 .. |image8| image:: ./media/Snipaste_2025-05-30_11-37-22.png
-.. |image9| image:: .\media\Snipaste_2025-05-30_11-47-46.png
+.. |image9| image:: ./media/Snipaste_2025-05-30_11-47-46.png
 .. |image10| image:: ./media/Snipaste_2025-05-30_11-49-56.png
 .. |image11| image:: ./media/Snipaste_2025-05-30_11-52-13.png
