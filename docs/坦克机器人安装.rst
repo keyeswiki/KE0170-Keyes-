@@ -234,7 +234,7 @@ IDE开发环境设置 <https://www.keyesrobot.cn/projects/KE0170/zh-cn/latest/do
 如何得到它？
 
 资料提供了调整窗户舵机的代码，请打开并烧录到主板，如下图所示。在文件夹
-\*\*..:raw-latex:`\舵机初始化角度`\_代码*\*
+..:raw-latex:`\舵机初始化角度`\_代码
 ，打开文件\ **Servo_Initialization_Angle_Code.ino**\ 。或将上述测试代码复制粘贴到Arduino
 IDE中。
 
@@ -253,8 +253,8 @@ IDE开发环境设置 <https://www.keyesrobot.cn/projects/KE0170/zh-cn/latest/do
 如何得到它？
 
 资料提供了调整窗户舵机的代码，请打开并烧录到主板，如下图所示。在文件夹
-\*\*..:raw-latex:`\舵机初始化角度`\_代码*\* ，使用 KidsBlock IDE
-打开文件 **舵机初始化角度_代码.sb3**\ 。或在KidsBlock
+..:raw-latex:`\舵机初始化角度`\_代码 ，使用 KidsBlock IDE 打开文件
+**舵机初始化角度_代码.sb3**\ 。或在KidsBlock
 IDE中直接拖动代码块编写上述测试代码。
 
 |image45|
